@@ -34,6 +34,8 @@ public class Correcto extends AppCompatActivity
             }
         }
 
+        //la re caca alfajor
+
         if(desicion == 0)
         {
             siguiente.setOnClickListener(new View.OnClickListener()
