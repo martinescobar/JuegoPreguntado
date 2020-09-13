@@ -10,14 +10,14 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity3 extends AppCompatActivity
+public class Ventana3 extends AppCompatActivity
 {
     Button acertado;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.ventana3);
 
         acertado = (Button)findViewById(R.id.correcto3);
 
@@ -26,7 +26,7 @@ public class MainActivity3 extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Intent siguiente = new Intent(MainActivity3.this, Correcto.class);
+                Intent siguiente = new Intent(Ventana3.this, Correcto.class);
                 startActivity(siguiente);
             }
         });

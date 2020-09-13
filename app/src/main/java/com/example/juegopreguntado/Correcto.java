@@ -9,71 +9,23 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 
 public class Correcto extends AppCompatActivity
 {
+    ImageView fondo1;
+    Button jugar, boton1, boton2, boton3, boton4;
     Button siguiente;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_correcto);
+
         siguiente = (Button)findViewById(R.id.button);
 
-        int valorRandom = (int) (Math.random()*2+1);
-        int desicion = 0;
-        int[] valores = {1,2};
-
-        for (int i =0 ;i<valores.length;i++)
-        {
-            if (valores[i] == valorRandom)
-            {
-                desicion = valorRandom;
-                valores[i] = 0;
-            }
-        }
-
-        //la re caca alfajor
-
-        if(desicion == 0)
-        {
-            siguiente.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    Intent siguiente = new Intent( Correcto.this, Termino.class);
-                    startActivity(siguiente);
-                }
-            });
-        }
-
-
-        if(desicion == 1)
-        {
-            siguiente.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    Intent siguiente = new Intent( Correcto.this, MainActivity2.class);
-                    startActivity(siguiente);
-                }
-            });
-        }
-        if (desicion == 2)
-        {
-            siguiente.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    Intent siguiente = new Intent( Correcto.this, MainActivity3.class);
-                    startActivity(siguiente);
-                }
-            });
-        }
+        elegidorDeVentanas();
 
     }
 
@@ -109,4 +61,88 @@ public class Correcto extends AppCompatActivity
 
         return super.onKeyDown(keyCode, event);
     }
+
+    public void elegidorDeVentanas()
+    {
+        int valorRandom = (int) (Math.random() * 4 + 1);
+        int desicion = 0;
+        int[] valores = {1, 2, 3, 4};
+
+
+        for (int i = 0; i < valores.length; i++) {
+            if (valores[i] == valorRandom) {
+                desicion = valorRandom;
+                valores[i] = 0;
+            }
+        }
+
+        if (desicion == 0)
+        {
+            siguiente.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+
+                    Intent siguiente = new Intent( Correcto.this, Termino.class);
+                    startActivity(siguiente);
+                }
+            });
+        }
+
+
+        if(desicion == 1)
+        {
+
+            siguiente.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    Intent siguiente = new Intent( Correcto.this, Ventana1.class);
+                    startActivity(siguiente);
+                }
+            });
+        }
+        if (desicion == 2)
+        {
+            siguiente.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    Intent siguiente = new Intent( Correcto.this, Ventana2.class);
+                    startActivity(siguiente);
+                }
+            });
+        }
+        if(desicion == 3)
+        {
+
+            siguiente.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    Intent siguiente = new Intent( Correcto.this, Ventana3.class);
+                    startActivity(siguiente);
+                }
+            });
+        }
+        if (desicion == 4)
+        {
+            siguiente.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    Intent siguiente = new Intent( Correcto.this, Ventana4.class);
+                    startActivity(siguiente);
+                }
+            });
+        }
+    }
+
+
+
 }
