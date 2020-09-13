@@ -1,3 +1,4 @@
+include ':commons-lang3-3.11'
 include ':ArrayUtils'
 include ':app'
 rootProject.name = "JuegoPreguntado"
