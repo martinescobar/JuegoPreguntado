@@ -13,12 +13,19 @@ import android.widget.Button;
 public class Ventana4 extends AppCompatActivity
 {
     Button acertado;
+    Button errado1;
+    Button errado2;
+    Button errado3;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ventana4);
+
         acertado = (Button)findViewById(R.id.correcto4);
+        errado1 = (Button)findViewById(R.id.incorrecto10);
+        errado2 = (Button)findViewById(R.id.incorrecto11);
+        errado3 = (Button)findViewById(R.id.incorrecto12);
 
         acertado.setOnClickListener(new View.OnClickListener()
         {
@@ -29,7 +36,39 @@ public class Ventana4 extends AppCompatActivity
                 startActivity(siguiente);
             }
         });
+
+        errado1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent siguiente = new Intent(Ventana4.this, Incorrecto.class);
+                startActivity(siguiente);
+            }
+        });
+
+        errado2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent siguiente = new Intent(Ventana4.this, Incorrecto.class);
+                startActivity(siguiente);
+            }
+        });
+
+        errado3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent siguiente = new Intent(Ventana4.this, Incorrecto.class);
+                startActivity(siguiente);
+            }
+        });
+
     }
+
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if(keyCode == event.KEYCODE_BACK)

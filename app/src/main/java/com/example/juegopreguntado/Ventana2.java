@@ -13,12 +13,19 @@ import android.widget.Button;
 public class Ventana2 extends AppCompatActivity
 {
     Button acertado;
+    Button errado1;
+    Button errado2;
+    Button errado3;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ventana2);
+
         acertado = (Button)findViewById(R.id.correcto2);
+        errado1 = (Button)findViewById(R.id.incorrecto4);
+        errado2 = (Button)findViewById(R.id.incorrecto5);
+        errado3 = (Button)findViewById(R.id.incorrecto6);
 
         acertado.setOnClickListener(new View.OnClickListener()
         {
@@ -30,10 +37,37 @@ public class Ventana2 extends AppCompatActivity
             }
         });
 
+        errado1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent siguiente = new Intent(Ventana2.this, Incorrecto.class);
+                startActivity(siguiente);
+            }
+        });
+
+        errado2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent siguiente = new Intent(Ventana2.this, Incorrecto.class);
+                startActivity(siguiente);
+            }
+        });
+
+        errado3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent siguiente = new Intent(Ventana2.this, Incorrecto.class);
+                startActivity(siguiente);
+            }
+        });
+
     }
-
-
-
 
     // Este codigo es para que cuando toque el boton de retroceso les saque del juego
     public boolean onKeyDown(int keyCode, KeyEvent event)

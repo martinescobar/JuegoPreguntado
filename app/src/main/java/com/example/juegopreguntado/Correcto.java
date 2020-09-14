@@ -26,17 +26,14 @@ public class Correcto extends AppCompatActivity
         siguiente = (Button)findViewById(R.id.button);
 
         elegidorDeVentanas();
-
     }
-
-
 
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if(keyCode == event.KEYCODE_BACK)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Desea Salir")
+            builder.setMessage("Desea Salir?")
                     .setPositiveButton("Si", new DialogInterface.OnClickListener()
                     {
                         @Override
@@ -142,7 +139,4 @@ public class Correcto extends AppCompatActivity
             });
         }
     }
-
-
-
 }
